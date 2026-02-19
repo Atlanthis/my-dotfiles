@@ -1,0 +1,79 @@
+/* Импортируем динамические цвета от Pywal */
+@import "../../.cache/wal/colors-waybar.css";
+
+/* Переменные Pywal:
+   @background - основной цвет из обоев
+   @foreground - основной контрастный текст
+   @color1, @color2... - акцентные цвета
+*/
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: transparent; /* Оставляем подложку прозрачной */
+}
+
+/* Общий стиль для всех "островков" с динамическими цветами */
+#window, 
+#workspaces, 
+#clock, 
+#tray, 
+#pulseaudio, 
+#backlight, 
+#battery, 
+#custom-wallpaper, 
+#language, 
+#memory {
+    /* Используем @background из Pywal с прозрачностью 0.85 */
+    background-color: rgba(13, 25, 38, 0.85); 
+    /* Если хочешь, чтобы фон ТОЖЕ менялся, раскомментируй строку ниже: */
+    /* background-color: alpha(@background, 0.85); */
+    
+    color: @color12; /* Динамический голубой/светлый акцент вместо статичного #33ccff */
+    border-radius: 12px;
+    padding: 2px 12px;
+    margin: 4px 2px;
+    border-bottom: 2px solid alpha(@color12, 0.2);
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @foreground;
+    opacity: 0.5;
+    border-radius: 8px;
+}
+
+#workspaces button.active {
+    color: @color12;
+    background: alpha(@color12, 0.15);
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b; /* Оставляем красный для критических уведомлений */
+}
+
+#window {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#custom-power {
+    color: @color1; /* Акцентный цвет для кнопки питания */
+    padding: 0 15px;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+/* Специфические настройки модулей, которые мы добавили */
+#language, #memory {
+    font-weight: bold;
+}

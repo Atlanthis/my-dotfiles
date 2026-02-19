@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin-top": 4,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 10,
+
+    "modules-left": ["hyprland/window"],
+    "modules-center": ["hyprland/workspaces", "clock"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "battery", "memory", "custom/wallpaper", "hyprland/language", "custom/power"],
+
+    "hyprland/window": {
+        "format": "󱂬  {}",
+        "max-length": 35,
+        "separate-outputs": true
+    },
+    "custom/power": {
+            "format": "⏻ ",
+            "tooltip": false,
+            "on-click": "wlogout", // Если установлен wlogout, откроется красивое меню
+            "on-click-right": "hyprctl dispatch exit" // Выход из сессии по правой кнопке
+        },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%a, %d %b}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#33ccff'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
+        "on-click": "pavucontrol"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
+    "battery": {
+        "states": { "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "custom/wallpaper": {
+        "format": "󰸉",
+        "on-click": "fish ~/change_wallpaper.sh",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "🇺🇸 US",
+        "format-ru": "🇷🇺 RU"
+    },
+    "memory": {
+        "interval": 10,
+        "format": "󰍛 {percentage}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB"
+    },
+}
