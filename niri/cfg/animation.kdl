@@ -1,0 +1,36 @@
+animations {
+    // Выключаем лимит, чтобы niri отрисовывал все 144 кадра
+    fps-limit 144
+
+    // Настройка замедления (damping). 
+    // На 144Гц слишком низкие значения могут давать "эффект желе"
+    slowdown 1.0
+
+    // Окна при открытии/закрытии
+    window-open {
+        duration-ms 200
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 200
+        curve "ease-out-expo"
+    }
+
+    // Основные анимации перемещения окон (spring)
+    // Увеличиваем stiffness, чтобы анимация была четкой и не "дергалась"
+    window-movement {
+        spring {
+            stiffness 800
+            damping 50
+        }
+    }
+
+    // Анимация при переключении воркспейсов
+    workspace-switch {
+        spring {
+            stiffness 1000
+            damping 60
+        }
+    }
+}

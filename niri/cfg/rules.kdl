@@ -1,0 +1,63 @@
+// Основные настройки оформления окон
+window-rule {
+    geometry-corner-radius 20 // Скругление углов для всех окон
+    clip-to-geometry true
+}
+// Правило для всех новых окон
+window-rule {
+    // Устанавливаем ширину в 85% от экрана
+    default-column-width { proportion 0.85; }
+}
+
+// Настройка обоев и фона
+layer-rule {
+    match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+
+// Правило для Elder Scrolls Online (ESO)
+window-rule {
+    match app-id="eso64.exe"
+    open-maximized true // Автоматически разворачивать игру
+}
+
+// Правило для Thunar (Всегда прозрачный 0.85)
+window-rule {
+    match app-id="thunar"
+    // Устанавливаем постоянную прозрачность 85%
+    opacity 0.85
+    default-column-width { proportion 0.85; }
+}
+window-rule {
+    match app-id="FFPWA-01KFXC8MZR6CCFRYDEZ7XCA6N5"
+    
+    // Прозрачность для активного окна (почти непрозрачное)
+    opacity 0.85
+}
+window-rule {
+    match app-id="com.rtosta.zapzap"
+    
+    // Прозрачность для активного окна (почти непрозрачное)
+    opacity 0.85
+}
+window-rule {
+    match app-id="org.telegram.desktop"
+    
+    // Прозрачность для активного окна (почти непрозрачное)
+    opacity 0.85
+}
+window-rule {
+    // Это отключит заливку цветом фокуса для всех окон,
+    // оставив только твою голубую рамку в 4 пикселя.
+    draw-border-with-background false
+}
+window-rule {
+    match app-id="foot"
+    default-column-width { proportion 0.8; }
+    draw-border-with-background false
+}
+// Set the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}

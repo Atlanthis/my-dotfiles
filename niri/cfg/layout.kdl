@@ -1,0 +1,37 @@
+layout {
+    
+
+    // Внешние отступы окон
+    gaps 12
+    center-focused-column "never" // Чтобы окна не прыгали в центр сами
+
+    // Цвет фона под окнами
+    background-color "transparent"
+
+    // Настройка кольца фокуса (бирюзовый под твой стиль)
+    focus-ring {
+        width 2
+        active-color "#00fbffff"
+        inactive-color "#444444ff"
+    }
+
+    // Выключаем стандартные границы окон
+    border {
+        off
+    }
+
+    // Ширина окна по умолчанию (95% экрана)
+    default-column-width { proportion 0.95; }
+
+    // Пресеты ширины колонок для быстрого изменения
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    // Настройки отступов для панелей (Noctalia)
+    struts {
+        // Оставляем пустым, чтобы Noctalia сама резервировала место
+    }
+}
