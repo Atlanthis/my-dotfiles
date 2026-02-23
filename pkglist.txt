@@ -281,6 +281,7 @@ profile-sync-daemon
 proton-vpn-cli
 proton-vpn-gtk-app
 pv
+pyprland
 python
 python-defusedxml
 python-packaging

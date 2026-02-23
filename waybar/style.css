@@ -23,8 +23,8 @@ window#waybar {
 #custom-wallpaper, 
 #language, 
 #custom-updates,
-#memory {
-    /* Используем динамический фон из Pywal с прозрачностью */
+#memory,
+#custom-spotify { /* Теперь Spotify в общей группе */
     background-color: alpha(@background, 0.85); 
     color: @color12; 
     border-radius: 12px;
@@ -32,6 +32,13 @@ window#waybar {
     margin: 4px 4px;
     border-bottom: 2px solid alpha(@color12, 0.3);
     font-weight: bold;
+}
+
+/* Индивидуальный акцент для Spotify */
+#custom-spotify {
+    color: @color10; /* Тот самый зеленый/акцентный цвет */
+    border-bottom: 2px solid alpha(@color10, 0.5);
+    min-width: 100px; /* Чтобы бар не прыгал при смене трека */
 }
 
 /* Настройки рабочих столов */
@@ -48,10 +55,6 @@ window#waybar {
     border-bottom: 2px solid @color12;
 }
 
-#workspaces button.urgent {
-    background-color: @color1;
-}
-
 /* Кнопка питания */
 #custom-power {
     color: @color1;
@@ -63,16 +66,9 @@ window#waybar {
     border-bottom: 2px solid alpha(@color1, 0.3);
 }
 
-/* Состояния виджета обновлений */
-#custom-updates.pending {
-    color: @color1; 
-}
-
-#custom-updates.updated {
-    color: @color12; 
-}
-
-/* Трей */
-#tray {
-    margin: 4px;
+/* Всплывающее окно с обложкой */
+tooltip {
+    background: alpha(@background, 0.95);
+    border-radius: 12px;
+    border: 2px solid @color10;
 }

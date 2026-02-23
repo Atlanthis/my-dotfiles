@@ -7,7 +7,7 @@
     "margin-right": 10,
     "spacing": 10,
 
-    "modules-left": ["hyprland/window"],
+    "modules-left": ["hyprland/window", "custom/spotify"],
     "modules-center": ["hyprland/workspaces", "clock"],
     "modules-right": ["tray", "pulseaudio", "backlight", "battery", "memory", "custom/wallpaper", "hyprland/language", "custom/updates", "custom/power"],
 
@@ -90,5 +90,16 @@
         "restart-interval": 600,
         "on-click": "foot fish -c '~/.config/waybar/run_updates.sh'",
         "tooltip": false
+    },
+    "custom/spotify": {
+        "exec": "python3 ~/.config/waybar/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "pypr toggle spotify", // Используем наш выездной плеер!
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
+        "max-length": 40,
+        "escape": true,
+        "tooltip": true // Это включит всплывающее окно с обложкой
     }
 }
