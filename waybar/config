@@ -9,7 +9,7 @@
 
     "modules-left": ["hyprland/window"],
     "modules-center": ["hyprland/workspaces", "clock"],
-    "modules-right": ["tray", "pulseaudio", "backlight", "battery", "memory", "custom/wallpaper", "hyprland/language", "custom/power"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "battery", "memory", "custom/wallpaper", "hyprland/language", "custom/updates", "custom/power"],
 
     "hyprland/window": {
         "format": "󱂬  {}",
@@ -83,4 +83,12 @@
         "tooltip": true,
         "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB"
     },
+    "custom/updates": {
+        "format": "󰚰 {}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/check_updates.sh",
+        "restart-interval": 600,
+        "on-click": "foot fish -c '~/.config/waybar/run_updates.sh'",
+        "tooltip": false
+    }
 }

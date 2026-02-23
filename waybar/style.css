@@ -1,12 +1,6 @@
 /* Импортируем динамические цвета от Pywal */
 @import "../../.cache/wal/colors-waybar.css";
 
-/* Переменные Pywal:
-   @background - основной цвет из обоев
-   @foreground - основной контрастный текст
-   @color1, @color2... - акцентные цвета
-*/
-
 * {
     border: none;
     border-radius: 0;
@@ -15,10 +9,10 @@
 }
 
 window#waybar {
-    background: transparent; /* Оставляем подложку прозрачной */
+    background: transparent;
 }
 
-/* Общий стиль для всех "островков" с динамическими цветами */
+/* Общий стиль для всех "островков" */
 #window, 
 #workspaces, 
 #clock, 
@@ -28,19 +22,18 @@ window#waybar {
 #battery, 
 #custom-wallpaper, 
 #language, 
+#custom-updates,
 #memory {
-    /* Используем @background из Pywal с прозрачностью 0.85 */
     background-color: rgba(13, 25, 38, 0.85); 
-    /* Если хочешь, чтобы фон ТОЖЕ менялся, раскомментируй строку ниже: */
-    /* background-color: alpha(@background, 0.85); */
-    
-    color: @color12; /* Динамический голубой/светлый акцент вместо статичного #33ccff */
+    color: @color12; 
     border-radius: 12px;
     padding: 2px 12px;
     margin: 4px 2px;
     border-bottom: 2px solid alpha(@color12, 0.2);
+    font-weight: bold;
 }
 
+/* Настройки рабочих столов */
 #workspaces button {
     padding: 0 5px;
     color: @foreground;
@@ -54,26 +47,22 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b; /* Оставляем красный для критических уведомлений */
+    background-color: #eb4d4b;
 }
 
-#window {
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-#clock {
-    font-weight: bold;
-}
-
+/* Кнопка питания */
 #custom-power {
-    color: @color1; /* Акцентный цвет для кнопки питания */
+    color: @color1;
     padding: 0 15px;
     margin-right: 5px;
     font-size: 18px;
 }
 
-/* Специфические настройки модулей, которые мы добавили */
-#language, #memory {
-    font-weight: bold;
+/* Состояния виджета обновлений */
+#custom-updates.pending {
+    color: @color1; /* Акцентный цвет, когда есть обновления */
+}
+
+#custom-updates.up-to-date {
+    color: @color12; /* Обычный цвет, когда всё чисто */
 }
