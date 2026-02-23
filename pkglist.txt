@@ -49,7 +49,7 @@ cantarell-fonts
 cava
 chwd
 cmake
-cmatrix
+cmatrix-git
 cosmic-app-library
 cosmic-applets
 cosmic-bg
