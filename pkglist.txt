@@ -325,6 +325,7 @@ telegram-desktop
 tesseract
 tesseract-data-eng
 texinfo
+themix-full-git
 thunar
 thunar-archive-plugin
 thunar-volman
