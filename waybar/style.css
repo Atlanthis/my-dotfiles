@@ -24,12 +24,13 @@ window#waybar {
 #language, 
 #custom-updates,
 #memory {
-    background-color: rgba(13, 25, 38, 0.85); 
+    /* Используем динамический фон из Pywal с прозрачностью */
+    background-color: alpha(@background, 0.85); 
     color: @color12; 
     border-radius: 12px;
     padding: 2px 12px;
-    margin: 4px 2px;
-    border-bottom: 2px solid alpha(@color12, 0.2);
+    margin: 4px 4px;
+    border-bottom: 2px solid alpha(@color12, 0.3);
     font-weight: bold;
 }
 
@@ -44,25 +45,34 @@ window#waybar {
 #workspaces button.active {
     color: @color12;
     background: alpha(@color12, 0.15);
+    border-bottom: 2px solid @color12;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: @color1;
 }
 
 /* Кнопка питания */
 #custom-power {
     color: @color1;
+    background-color: alpha(@background, 0.85);
+    border-radius: 12px;
     padding: 0 15px;
-    margin-right: 5px;
+    margin: 4px 4px;
     font-size: 18px;
+    border-bottom: 2px solid alpha(@color1, 0.3);
 }
 
 /* Состояния виджета обновлений */
 #custom-updates.pending {
-    color: @color1; /* Акцентный цвет, когда есть обновления */
+    color: @color1; 
 }
 
-#custom-updates.up-to-date {
-    color: @color12; /* Обычный цвет, когда всё чисто */
+#custom-updates.updated {
+    color: @color12; 
+}
+
+/* Трей */
+#tray {
+    margin: 4px;
 }

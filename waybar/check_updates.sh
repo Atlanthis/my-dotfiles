@@ -1,10 +1,10 @@
-#!/usr/bin/fish
-# Проверка через paru (совмещает репозитории и AUR)
-set updates (paru -Qu | wc -l)
+#!/bin/bash
+# Считаем обновления
+count=$(checkupdates | wc -l)
 
-if test "$updates" -gt 0
-    # Отдаем JSON для Waybar: текст с числом и класс 'pending' для стиля
-    echo "{\"text\": \"$updates\", \"class\": \"pending\"}"
+# Выводим строго JSON
+if [ "$count" -gt 0 ]; then
+    echo "{\"text\": \"$count\", \"class\": \"pending\"}"
 else
-    echo "{\"text\": \"0\", \"class\": \"up-to-date\"}"
-end
+    echo "{\"text\": \"0\", \"class\": \"updated\"}"
+fi
