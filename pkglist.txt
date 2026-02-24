@@ -313,6 +313,7 @@ speedtest++
 spicetify-cli
 spicetify-marketplace-bin
 spotify
+stow
 sudo
 supertuxkart
 swaybg
