@@ -1,0 +1,7 @@
+@import "themes/transparent/style.css";
+window {
+    background-image: url("/home/atlanthis/Pictures/Wallpaper/satoru-gojo-blue-3840x2160-18427.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
