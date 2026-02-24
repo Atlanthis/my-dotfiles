@@ -1,0 +1,114 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "padding": {
+            "top": 2,
+            "right": 4
+        }
+    },
+    "display": {
+        "separator": "  ➜  ",
+        "color": "magenta",
+        "key": {
+            "width": 15
+        }
+    },
+    "modules": [
+        "title",
+        {
+            "type": "custom",
+            "format": "┌─ System ──────────────────────────────────────────────────┐",
+            "outputColor": "blue"
+        },
+        {
+            "type": "os",
+            "key": "│ 󰣇 OS",
+            "keyColor": "blue"
+        },
+        {
+            "type": "kernel",
+            "key": "│ 󰒋 Kernel",
+            "keyColor": "blue"
+        },
+        {
+            "type": "uptime",
+            "key": "│ 󰔛 Uptime",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": "│ 󰏖 Packages",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "└───────────────────────────────────────────────────────────┘",
+            "outputColor": "blue"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "┌─ Desktop ─────────────────────────────────────────────────┐",
+            "outputColor": "magenta"
+        },
+        {
+            "type": "display",
+            "key": "│ 󰍹 Display",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "wm",
+            "key": "│ 󱂬 WM",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "terminal",
+            "key": "│ 󰆍 Term",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": "│ 󰞷 Shell",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "custom",
+            "format": "└───────────────────────────────────────────────────────────┘",
+            "outputColor": "magenta"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "┌─ Hardware ────────────────────────────────────────────────┐",
+            "outputColor": "yellow"
+        },
+        {
+            "type": "cpu",
+            "key": "│ 󰻠 CPU",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "gpu",
+            "key": "│ 󰢮 GPU",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "memory",
+            "key": "│ 󰑭 Memory",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "disk",
+            "key": "│ 󰋊 Disk",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": "└───────────────────────────────────────────────────────────┘",
+            "outputColor": "yellow"
+        },
+        "break",
+        "colors"
+    ]
+}
