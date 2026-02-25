@@ -1,10 +1,12 @@
 // Основные настройки оформления окон
 window-rule {
-    // Это правило применится ко всем окнам
-    default-column-width { proportion 0.75; }
-    default-window-height { proportion 0.75; }
+    // Растягиваем окно по вертикали на 100%
+    default-window-height { proportion 1.0; }
     
-    // Опционально: центрируем окно при открытии
+    // Ограничиваем ширину до 75%
+    default-column-width { proportion 0.75; }
+    
+    // Центрируем окно при открытии
     open-on-output "center";
 }
 window-rule {
