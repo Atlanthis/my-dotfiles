@@ -238,7 +238,6 @@ nwg-shell
 nwg-shell-config
 ocean-sound-theme
 octopi
-oh-my-posh
 onlyoffice-bin
 opencl-nvidia
 openssh
