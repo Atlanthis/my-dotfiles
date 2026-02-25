@@ -1,5 +1,13 @@
 // Основные настройки оформления окон
 window-rule {
+    // Это правило применится ко всем окнам
+    default-column-width { proportion 0.75; }
+    default-window-height { proportion 0.75; }
+    
+    // Опционально: центрируем окно при открытии
+    open-on-output "center";
+}
+window-rule {
     geometry-corner-radius 20 // Скругление углов для всех окон
     clip-to-geometry true
 }
