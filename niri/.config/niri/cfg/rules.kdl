@@ -1,16 +1,10 @@
 // Основные настройки оформления окон
 window-rule {
-    // Базовые размеры
     default-column-width { proportion 0.75; }
     default-window-height { proportion 1.0; }
 
-    // Указываем минимальную высоту явно
-    // Niri часто требует конкретное значение перед блоком параметров
     min-height 100
     
-    // Либо, если хочешь именно через пропорцию, синтаксис должен быть таким:
-    // min-height { proportion 1.0; }
-    // Но судя по ошибке, он хочет аргумент. Попробуем без него:
     exclude app-id="org.kde.kcalc"
 }
 window-rule {
@@ -19,7 +13,6 @@ window-rule {
 }
 // Правило для всех новых окон
 window-rule {
-    // Устанавливаем ширину в 85% от экрана
     default-column-width { proportion 0.85; }
 }
 
@@ -32,37 +25,29 @@ layer-rule {
 // Правило для Elder Scrolls Online (ESO)
 window-rule {
     match app-id="eso64.exe"
-    open-maximized true // Автоматически разворачивать игру
+    open-maximized true
 }
 
 // Правило для Thunar (Всегда прозрачный 0.85)
 window-rule {
     match app-id="thunar"
-    // Устанавливаем постоянную прозрачность 85%
     opacity 0.9
     default-column-width { proportion 0.85; }
 }
 window-rule {
     match app-id="FFPWA-01KFXC8MZR6CCFRYDEZ7XCA6N5"
-    
-    // Прозрачность для активного окна (почти непрозрачное)
     opacity 0.9
 }
 window-rule {
     match app-id="com.rtosta.zapzap"
-    
-    // Прозрачность для активного окна (почти непрозрачное)
     opacity 0.85
 }
 window-rule {
     match app-id="org.telegram.desktop"
-    
-    // Прозрачность для активного окна (почти непрозрачное)
     opacity 0.9
 }
 window-rule {
     // Это отключит заливку цветом фокуса для всех окон,
-    // оставив только твою голубую рамку в 4 пикселя.
     draw-border-with-background false
 }
 window-rule {
