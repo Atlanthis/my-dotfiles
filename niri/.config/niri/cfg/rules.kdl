@@ -11,6 +11,7 @@ window-rule {
     // Либо, если хочешь именно через пропорцию, синтаксис должен быть таким:
     // min-height { proportion 1.0; }
     // Но судя по ошибке, он хочет аргумент. Попробуем без него:
+    exclude app-id="org.kde.kcalc"
 }
 window-rule {
     geometry-corner-radius 20 // Скругление углов для всех окон
@@ -76,13 +77,11 @@ layer-rule {
 }
 window-rule {
     match app-id="org.kde.kcalc"
-    
-    // Включаем плавающий режим
     open-floating true
+
+    // Используем стандартные блоки для задания размера
+    default-column-width { fixed 428; }
+    default-window-height { fixed 501; }
     
-    // Устанавливаем точный размер из твоего скриншота
-    default-floating-rect width=428 height=501
-    
-    // Центрируем при открытии
-    open-on-output "center";
+    open-on-output "center"
 }
